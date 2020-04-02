@@ -1,7 +1,9 @@
 package ru.iCRM;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 public class TestSetting extends WebDriverSettings {
     @Test
@@ -285,25 +287,17 @@ public class TestSetting extends WebDriverSettings {
         driver.findElementByLinkText("Staff").click();
         Thread.sleep(2000);
         driver.findElementByLinkText("Doctors").click();
-        driver.findElementByCssSelector("#datatable > tbody > tr:nth-child(37) > td:nth-child(5) > a").click();
+        driver.findElementByCssSelector("#datatable > tbody > tr:last-child  > td:nth-child(5) > a").click();
         Thread.sleep(2000);
         driver.findElementByName("name").clear();
         driver.findElementByName("name").sendKeys("doctor+edit" + n);
         Thread.sleep(1000);
-        driver.findElementByCssSelector("input.chosen-search-input").clear();
-        driver.findElementByCssSelector("input.chosen-search-input").click();
-        driver.findElementByXPath("//div[@id='app']/div/div/div[2]/div/div/form/div/div/div[2]/div/div/div/ul/li[1]").click();
-        driver.findElementByCssSelector("input.chosen-search-input").click();
-        driver.findElementByXPath("//div[@id='app']/div/div/div[2]/div/div/form/div/div/div[2]/div/div/div/ul/li[2]").click();
-        driver.findElementByCssSelector("input.chosen-search-input").click();
-        driver.findElementByXPath("//div[@id='app']/div/div/div[2]/div/div/form/div/div/div[2]/div/div/div/ul/li[3]").click();
-        driver.findElementByCssSelector("input.chosen-search-input").click();
-        driver.findElementByXPath("//div[@id='app']/div/div/div[2]/div/div/form/div/div/div[2]/div/div/div/ul/li[4]").click();
-        driver.findElementByCssSelector("#app > div > div > div.panel-body > div > div > form > div:nth-child(2) > div > div:nth-child(3) > div > div > ul > li > input").clear();
-        driver.findElementByCssSelector("#app > div > div > div.panel-body > div > div > form > div:nth-child(2) > div > div:nth-child(3) > div > div > ul > li > input").click();
-        driver.findElementByXPath("//div[@id='app']/div/div/div[2]/div/div/form/div/div/div[3]/div/div/div/ul/li[1]").click();
-        driver.findElementByCssSelector("#app > div > div > div.panel-body > div > div > form > div:nth-child(2) > div > div:nth-child(3) > div > div > ul > li > input").click();
-        driver.findElementByXPath("//div[@id='app']/div/div/div[2]/div/div/form/div/div/div[3]/div/div/div/ul/li[2]").click();
+        WebElement location = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div/form/div[1]/div/div[2]/div/div"));
+        location.click();
+        driver.findElementByXPath("//*[@id=\"app\"]/div/div/div[2]/div/div/form/div[1]/div/div[2]/div/div/div/ul/li[1]").click();
+        driver.findElementByCssSelector("#app > div > div > div.panel-body > div > div > form > div:nth-child(2) > div > div:nth-child(3) > label").click();
+        driver.findElementByCssSelector("#app > div > div > div.panel-body > div > div > form > div:nth-child(2) > div > div:nth-child(3) > div > div > ul > li").click();
+        driver.findElementByXPath("//*[@id=\"app\"]/div/div/div[2]/div/div/form/div[1]/div/div[3]/div/div/div/ul/li[2]").click();
         driver.findElementByCssSelector("#app > div > div > div.panel-body > div > div > form > div:nth-child(3) > div > input").click();
         System.out.println("Doctor изменен на doctor+edit" + n);
         driver.quit();

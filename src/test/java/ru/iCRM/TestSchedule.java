@@ -29,10 +29,7 @@ public class TestSchedule extends WebDriverSettings {
             driver.findElementById("password").sendKeys("rikku007");
             driver.findElementByCssSelector("#main-container > div > div.row > div > div > div.panel-body > form > div:nth-child(5) > div > button").click();
             driver.findElementByCssSelector("#wizard > div:nth-child(2) > div > div:nth-child(2) > button:nth-child(5)").click();
-            WebElement wait2 = new WebDriverWait(driver, 5)
-                    .until(ExpectedConditions.elementToBeClickable(By.linkText("New schedule")));
-            var newschedule = driver.findElementByLinkText("New schedule");
-            newschedule.click();
+            driver.get("https://icrm.connected-home.io/v2.1/manchester-private-hospital/calendar/schedule/create#/");
             driver.findElementByName("clinic_type_id").click();
             driver.findElementByCssSelector("#app > div > div.panel-body > div > div > form > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div > select > option:nth-child(2)").click();
             driver.findElementByLinkText("Select an Option").click();

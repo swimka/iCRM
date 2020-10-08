@@ -3,6 +3,7 @@ package ru.iCRM;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Random;
 
@@ -13,10 +14,12 @@ public class WebDriverSettings {
     @Before
     public void setUp() {
         driver = new ChromeDriver();
-        driver.manage().window().fullscreen();
         driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
 
     }
     Random random = new Random();

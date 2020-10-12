@@ -25,6 +25,9 @@ public class WebDriverSettings {
     Random random = new Random();
     int n = random.nextInt(100) +3;
 
+    Random randoms = new Random();
+    int r = randoms.nextInt(100) +2;
+
 
 
 

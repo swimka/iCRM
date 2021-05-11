@@ -11,9 +11,9 @@ public class TestLeadForm extends WebDriverSettings {
     //проверка авторизации
     @Test
     public void TestLeadForm() throws InterruptedException {
-        driver.get("https://icrm.connected-home.io/client/login");
-        driver.findElementById("email").sendKeys("niraj.manglam@nucosmeticclinic.co.uk");
-        driver.findElementById("password").sendKeys("rikku007");
+        driver.get(URL);
+        driver.findElementById("email").sendKeys(USER_admin);
+        driver.findElementById("password").sendKeys(PASSWORD_admin);
         driver.findElementByCssSelector("#main-container > div > div.row > div > div > div.panel-body > form > div:nth-child(5) > div > button").click();
         driver.findElementByCssSelector("#wizard > div:nth-child(2) > div > div:nth-child(2) > button:nth-child(5)").click();
         driver.get("https://icrm.connected-home.io/v2.1/manchester-private-hospital/lead/create");

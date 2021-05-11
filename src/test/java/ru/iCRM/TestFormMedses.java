@@ -11,11 +11,12 @@ public class TestFormMedses extends WebDriverSettings {
     //проверка авторизации
     @Test
     public void TestFormMedses() throws InterruptedException {
-        driver.get("https://icrm.connected-home.io/client/login");
-        driver.findElementById("email").sendKeys("niraj.manglam@nucosmeticclinic.co.uk");
-        driver.findElementById("password").sendKeys("rikku007");
+        driver.get(URL);
+        driver.findElementById("email").sendKeys(USER_admin);
+        driver.findElementById("password").sendKeys(PASSWORD_admin);
         driver.findElementByCssSelector("#main-container > div > div.row > div > div > div.panel-body > form > div:nth-child(5) > div > button").click();
         driver.findElementByCssSelector("#wizard > div:nth-child(2) > div > div:nth-child(2) > button:nth-child(5)").click();
+        //Create Pre Operative Assessment Form
         driver.get("https://icrm.connected-home.io/v2.1/manchester-private-hospital/lead/detail/17298#/");
         Thread.sleep(1500);
         driver.findElementByXPath("//*[@id=\"top-bar-btn-lead\"]/button[6]").click();
@@ -102,7 +103,7 @@ public class TestFormMedses extends WebDriverSettings {
         js.executeScript("window.scrollBy(0,250)", "");
         Thread.sleep(2000);
         driver.findElementByXPath("//*[@id=\"app\"]/div/div/div/div[2]/div[4]/button[2]").click();
-        System.out.println("Форма сохранена.");
+        System.out.println("Форма Pre Operative Assessment Form сохранена.");
         driver.quit();
 
 

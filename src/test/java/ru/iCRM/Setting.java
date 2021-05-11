@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-public class TestSetting extends WebDriverSettings {
+public class Setting extends WebDriverSettings {
     @Test
     public void settingcreateclinic() throws InterruptedException {
         driver.get("https://icrm.connected-home.io/client/login");

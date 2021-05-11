@@ -27,6 +27,9 @@ public class WebDriverSettings {
 
     Random randoms = new Random();
     int r = randoms.nextInt(100) +2;
+    public static final String URL = "https://icrm.connected-home.io/client/login";
+    public static final String USER_admin = "niraj.manglam@nucosmeticclinic.co.uk";
+    public static final String PASSWORD_admin = "rikku007";
 
 
 

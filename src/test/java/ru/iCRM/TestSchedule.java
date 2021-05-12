@@ -11,11 +11,7 @@ public class TestSchedule extends WebDriverSettings {
     //проверка авторизации
     @Test
     public void Schedule() throws InterruptedException {
-        driver.get(URL);
-        driver.findElementById("email").sendKeys(USER_admin);
-        driver.findElementById("password").sendKeys(PASSWORD_admin);
-        driver.findElementByCssSelector("#main-container > div > div.row > div > div > div.panel-body > form > div:nth-child(5) > div > button").click();
-        driver.findElementByCssSelector("#wizard > div:nth-child(2) > div > div:nth-child(2) > button:nth-child(5)").click();
+        login();
         WebElement wait = new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(By.linkText("New schedule")));
         var newschedule = driver.findElementByLinkText("New schedule");
@@ -25,11 +21,7 @@ public class TestSchedule extends WebDriverSettings {
     }
         @Test
         public void Schedulecreate() throws InterruptedException {
-            driver.get(URL);
-            driver.findElementById("email").sendKeys(USER_admin);
-            driver.findElementById("password").sendKeys(PASSWORD_admin);
-            driver.findElementByCssSelector("#main-container > div > div.row > div > div > div.panel-body > form > div:nth-child(5) > div > button").click();
-            driver.findElementByCssSelector("#wizard > div:nth-child(2) > div > div:nth-child(2) > button:nth-child(5)").click();
+            login();
             driver.get("https://icrm.connected-home.io/v2.1/manchester-private-hospital/calendar/schedule/create#/");
             driver.findElementByName("clinic_type_id").click();
             driver.findElementByCssSelector("#app > div > div.panel-body > div > div > form > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div > select > option:nth-child(2)").click();
